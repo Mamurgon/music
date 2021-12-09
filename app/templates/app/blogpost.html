@@ -23,7 +23,7 @@
 {% for comment in comments %}
 <hr />
 <h6> {{comment.date}} </h6>
-<h5> {{comment.author}} </h5>
+<h5 style="color:red"> {{comment.author}} </h5>
 <p> {{comment.text|linebreaksbr}} </p>
 {% endfor %}
 
