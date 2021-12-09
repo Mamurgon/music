@@ -1,0 +1,13 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+<h1 class="sponsors-title">{{ title }}</h1>
+
+<a href="https://www.muzplanetpskov.ru/" target="_blank"><img src="{% static 'app/content/logo1.jpg'%}" width="250" height="250" alt="logo1" /></a>
+<a href="https://ru.wikipedia.org/wiki/Гитара" target="_blank"><img src="{% static 'app/content/logo2.png'%}" width="250" height="250" alt="logo1" /></a>
+<a href="https://ru.wikipedia.org/wiki/Пианино" target="_blank"><img src="{% static 'app/content/logo3.png'%}" width="250" height="250" alt="logo1" /></a>
+
+{% endblock %}

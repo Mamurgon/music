@@ -1,0 +1,57 @@
+<div class="pool">
+
+{% extends "app/layout.html" %}
+
+{% load staticfiles %}
+
+{% block bg %}
+   class="child_bg_class"
+{% endblock %}
+
+{% block content %}
+
+{% if form != None %}
+<div class="container-pool">
+<h1>Оставить отзыв</h1><br />
+<div>
+    <form class="form-content" method="post">
+        {% csrf_token %}
+        <label for="{{ form.name.id_for_label }}">{{ form.name.label }}:</label>
+        {{ form.name }}<br />
+        <label for="{{ form.city.id_for_label }}">{{ form.city.label }}:</label>
+        {{ form.city }}<br />
+        <label for="{{ form.email.id_for_label }}">{{ form.email.label }}:</label>
+        {{ form.email }}<br />
+        <label for="{{ form.gender.id_for_label }}">{{ form.gender.label }}:</label>
+        {{ form.gender }}<br />
+        <label for="{{ form.feedback.id_for_label }}">{{ form.feedback.label }}:</label>
+        {{ form.feedback }}<br />
+        <label for="{{ form.title.id_for_label }}">{{ form.title.label }}:</label>
+        {{ form.title }}<br />
+        <label for="{{ form.message.id_for_label }}">{{ form.message.label }}:</label>
+        {{ form.message }}<br />
+        <label for="{{ form.notice.id_for_label }}">{{ form.notice.label }}:</label>
+        {{ form.notice }}<br />
+        <input type="submit" value="Отправить" />
+    </form>
+</div>
+</div>
+{% else %}
+<div class="container-pool">
+<h2>Спасибо!</h2>
+<h3>Вы оставили следующий отзыв: </h3>
+<ul class="pool-finish">
+    <li><span>Имя: </span>{{ data.name }}</li>
+    <li><span>Город: </span>{{ data.city }}</li>
+    <li><span>Почта: </span>{{ data.email }}</li>
+    <li><span>Пол: </span>{{ data.gender }}</li>
+    <li><span>Тема: </span>{{ data.feedback }}</li>
+    <li><span>Заголовок: </span>{{ data.title }}</li>
+    <li><span>Сообщение: </span>{{ data.message }}</li>
+    <li><span>Присылать ли Вам новости нашего сайта? </span>{{ data.notice }}</li>
+</ul>
+</div>
+{% endif %}
+        
+{% endblock %}  
+</div>
